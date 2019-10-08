@@ -6,9 +6,13 @@
 	<head>
 		<title>Leave Management System</title>
 		<meta charset="ISO-8859-1">
-		<meta name="google-signin-client_id" content="188419469527-4bh87etfnapba6g9htiojgdrn5bta9gd.apps.googleusercontent.com">
+		<meta name="google-signin-client_id" content="188419469527-usdhao1pp0kgaammglv15r9s9d7al26o.apps.googleusercontent.com">
 		<script src="https://apis.google.com/js/platform.js" async defer></script>
 		<script src="./main.js" async defer></script>
+		<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous" async defer></script>
 	</head>
 	<body>
 		<h1>Leave Management System</h1>
