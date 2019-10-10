@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%! boolean loggedIn; %>
+<%@ page import="com.arc.User" %>
+<%! User user; %>
 <% 
-	if (session.getAttribute("googleId") == null) loggedIn = false;
-	else loggedIn = true;
+	user = (User)session.getAttribute("user");
 %>
 <!DOCTYPE html>
 <html>
@@ -21,13 +21,13 @@
 	</head>
 	<body>
 		<h1>Leave Management System</h1>
-		<c:if test="${!loggedIn}">
+		<c:if test="${user == null}">
 			<div class="g-signin2" data-onsuccess="onSignIn"></div>
 		</c:if>
-		<c:if test="${1 == 1}">
+		<c:if test="${user != null && user.hod == 0}">
 			<jsp:include page="./faculty.jsp" flush="true" />
 		</c:if>
-		<c:if test="${1 == 1}">
+		<c:if test="${user != null && user.hod == 1}">
 			<jsp:include page="./hod.jsp" flush="true" />
 		</c:if>
 	</body>
