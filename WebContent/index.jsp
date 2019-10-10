@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%! boolean loggedIn; %>
+<% 
+	if (session.getAttribute("googleId") == null) loggedIn = false;
+	else loggedIn = true;
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,7 +21,7 @@
 	</head>
 	<body>
 		<h1>Leave Management System</h1>
-		<c:if test="${1 == 1}">
+		<c:if test="${!loggedIn}">
 			<div class="g-signin2" data-onsuccess="onSignIn"></div>
 		</c:if>
 		<c:if test="${1 == 1}">
