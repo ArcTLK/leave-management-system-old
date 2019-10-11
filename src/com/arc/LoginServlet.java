@@ -35,7 +35,12 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String CLIENT_ID = "188419469527-usdhao1pp0kgaammglv15r9s9d7al26o.apps.googleusercontent.com";
        
-
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		session.setAttribute("user", null);
+		response.setContentType("application/json");
+		response.getWriter().append("{\"result\":true}");
+	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -54,7 +59,7 @@ public class LoginServlet extends HttpServlet {
 			if (idToken != null) {
 				  Payload payload = idToken.getPayload();
 				  String domain = payload.getHostedDomain();
-				  if (domain.equals("student.mes.ac.in")  || domain.equals("mes.ac.in")) {
+				  if (domain != null && (domain.equals("student.mes.ac.in")  || domain.equals("mes.ac.in"))) {
 					  String userId = payload.getSubject();
 					  String email = payload.getEmail();
 					  String name = (String) payload.get("name");
@@ -110,7 +115,10 @@ public class LoginServlet extends HttpServlet {
 				  else {
 					  response.setStatus(403);
 					  response.setContentType("application/json");
-					  response.getWriter().append("{\"result\":false, \"error\":\"Invalid Domain: " + domain + "\"}");
+					  if (domain == null) {
+						  response.getWriter().append("{\"result\":false, \"error\":\"Only mes users can log in\"}");
+					  }
+					  else response.getWriter().append("{\"result\":false, \"error\":\"Invalid Domain: " + domain + "\"}");
 				  }
 			}
 			else {

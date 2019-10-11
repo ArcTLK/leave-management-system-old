@@ -1,0 +1,55 @@
+body {
+	font-family: Noto Sans;
+	margin: 0px;
+	background-color: #faeceb;
+	color: #e8594f;
+}
+
+h1 {
+	text-align: center;
+	color: #cf0d00;
+}
+
+.center-table {
+	margin: auto;
+	width: 100%;
+	border-collapse: collapse;
+	border-bottom: #000 solid 3px;
+}
+
+.center-table th {
+	font-size: 20px;
+	border: #000 solid 3px;
+}
+
+.center-table td {
+	border-left: #000 solid 3px;
+	border-right: #000 solid 3px;
+}
+
+.center-table .title {
+	font-size: 24px;
+}
+.sign-out-button {
+	float: right;
+	position: relative;
+	top: -60px;
+	right: 40px;
+	padding: 10px;
+	cursor: pointer;
+	border: 1px #000 solid;
+	font-size: 18px;
+	color: #cf0d00;
+	background-color: #fff;
+}
+.sign-out-button:hover {
+	background-color: #eee;
+}
+.sign-out-button:active {
+	background-color: #ddd;
+}
+.sign-in-button {
+	position: absolute;
+	top: 45%;
+	left: 45%;
+}

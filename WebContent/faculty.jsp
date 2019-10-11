@@ -1,7 +1,8 @@
 <%@ page import="com.arc.*" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.net.*" %>
-<%! User user; Connection connection; PreparedStatement preparedStatement; ResultSet resultSet; int leaves; %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%! User user; Connection connection; PreparedStatement preparedStatement; ResultSet resultSet; int leaves; %> 
 <%
 user = (User)session.getAttribute("user");
 if (user != null) {
@@ -53,7 +54,9 @@ if (user != null) {
 <p>
 	Your current leave balance is: <%= leaves %>
 </p>
+<% if (leaves > 0) { %>
 <form method="POST">
 	<input type="text" name="reason" placeholder="Enter reason of absence" required>
 	<button name="submit" value="apply">Apply for Leave</button>
 </form>
+<% } %>

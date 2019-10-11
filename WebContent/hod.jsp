@@ -21,17 +21,19 @@ if (user != null && user.hod == 1) {
 	}
 }
 %>
-<h2>Faculty on leave today:</h2>
-<table>
+<table class="center-table">
 	<tr>
-		<th colspan="2">Name</th>
+		<th colspan="3" class="title">Faculty on leave today</th>
+	</tr>
+	<tr>
+		<th>Name</th>
 		<th>Reason</th>
 		<th>Contact (Email)</th>
 	</tr>
 	<% 
 	while(resultSet.next()) {
 		out.println("<tr><td><img src='" + resultSet.getString("picture_url") +
-		"' height='64' width='64'></td><td>" + resultSet.getString("name") + "</td><td>" + resultSet.getString("reason") +
+		"' height='64' width='64'><div style='font-size: 20px; display: inline-block; position: relative; top: -24px; left: 5px;'>" + resultSet.getString("name") + "</div></td><td>" + resultSet.getString("reason") +
 		"</td><td><a href='mailto:" + resultSet.getString("email") + "'>" + resultSet.getString("email") + "</a></td></tr>");
 	}
 	resultSet.close();
