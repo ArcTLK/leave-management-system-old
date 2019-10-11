@@ -1,7 +1,6 @@
 <%@ page import="com.arc.*" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.net.*" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%! User user; Connection connection; PreparedStatement preparedStatement; ResultSet resultSet; int leaves; %> 
 <%
 user = (User)session.getAttribute("user");
