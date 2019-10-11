@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="com.arc.User" %>
+<%@ page import="com.arc.*" %>
 <%! User user; %>
 <% 
 	user = (User)session.getAttribute("user");
@@ -11,6 +11,7 @@
 	<head>
 		<title>Leave Management System</title>
 		<meta charset="ISO-8859-1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="google-signin-client_id" content="188419469527-usdhao1pp0kgaammglv15r9s9d7al26o.apps.googleusercontent.com">
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="./style.css">
@@ -25,6 +26,7 @@
 		<h1>Leave Management System</h1>
 		<c:if test="${user != null}">
 			<button onclick="signOut()" class="sign-out-button">Sign out</button>
+			<div style="clear:both"></div>
 		</c:if>
 		<c:if test="${user == null}">
 			<div class="sign-in-button">

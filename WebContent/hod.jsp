@@ -10,7 +10,7 @@ if (user != null && user.hod == 1) {
 	resultSet = null;
 	try {
 		connection = Database.getConnection();
-		preparedStatement = connection.prepareStatement("SELECT u.name, u.picture_url, u.email, l.reason FROM leaves l INNER JOIN users u ON l.user_id = u.id WHERE CURRENT_TIME - INTERVAL '1 DAY' > requested_on");
+		preparedStatement = connection.prepareStatement("SELECT u.name, u.picture_url, u.email, l.reason FROM leaves l INNER JOIN users u ON l.user_id = u.id WHERE requested_date = cast(date_trunc('day', current_date) as date)");
 		resultSet = preparedStatement.executeQuery();
 	} catch (SQLException e) {
 		response.getWriter().append("<p>Database Error: SQL Error</p>");
