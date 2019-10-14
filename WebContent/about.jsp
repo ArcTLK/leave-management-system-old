@@ -37,7 +37,7 @@
 			<ul>
 				<li>Aditya Nair</li>
 				<li>Kaustubh Sawant</li>
-				<li>Alex Vetillathanam</li>
+				<li>Alex Vettithanam</li>
 				<li>Manish Jadhav</li>
 			</ul>
 		</div>
