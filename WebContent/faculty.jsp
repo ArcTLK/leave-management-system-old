@@ -59,9 +59,9 @@ if (user != null) {
 	}
 }
 %>
-<div style="margin: auto; width: 40%">
+<div class="content">
 	<p>
-		Your current leave balance is: <%= leaves %>
+		Your current leave balance is: <b><%= leaves %></b>
 	</p>
 	<% if (leaves > 0) { %>
 	<form method="POST">

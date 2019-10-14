@@ -34,7 +34,7 @@ if (user != null && user.hod == 1) {
 	while(resultSet.next()) {
 		out.println("<tr><td><img src='" + resultSet.getString("picture_url") +
 		"' height='64' width='64'><div style='font-size: 20px; display: inline-block; position: relative; top: -24px; left: 5px;'>" + resultSet.getString("name") + "</div></td><td>" + resultSet.getString("reason") +
-		"</td><td><a href='mailto:" + resultSet.getString("email") + "'>" + resultSet.getString("email") + "</a></td></tr>");
+		"</td><td><a style='text-align:center' href='mailto:" + resultSet.getString("email") + "'>" + resultSet.getString("email") + "</a></td></tr>");
 	}
 	resultSet.close();
 	preparedStatement.close();

@@ -1,13 +1,44 @@
 body {
 	font-family: Noto Sans;
 	margin: 0px;
-	background-color: #faeceb;
+	background-color: #d6d6c2;
+	background-image: url("./bg tile.png");
 	color: #e8594f;
 }
 
 h1 {
 	text-align: center;
 	color: #cf0d00;
+}
+
+.top-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background-color: #d9362bc7;
+	margin-bottom: 100px;
+}
+
+.content {
+	padding: 10px;
+	background-color: #d6d6c2;
+	border: #000 solid 3px;
+	border-radius: 20px;
+	margin: auto;
+	width: 40%;
+}
+
+.sign-in-box {
+	padding: 20px;
+	background-color: #d6d6c2;
+	border: #000 solid 3px;
+	border-radius: 20px;
+	margin: auto;
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .center-table {
@@ -20,36 +51,35 @@ h1 {
 .center-table th {
 	font-size: 20px;
 	border: #000 solid 3px;
+	background-color: #d6d6c2;
 }
 
 .center-table td {
 	border-left: #000 solid 3px;
 	border-right: #000 solid 3px;
+	background-color: #d6d6c2;
 }
 
 .center-table .title {
 	font-size: 24px;
 }
-.sign-out-button {
-	float: right;
-	position: relative;
-	top: -60px;
-	right: 40px;
+.sign-out-button, .navbar a {
+	display: inline-block;
 	padding: 10px;
+	margin: 10px;
 	cursor: pointer;
 	border: 1px #000 solid;
 	font-size: 18px;
 	color: #cf0d00;
 	background-color: #fff;
+	text-decoration: none;
 }
-.sign-out-button:hover {
+.sign-out-button:hover, .navbar a:hover {
 	background-color: #eee;
 }
-.sign-out-button:active {
+.sign-out-button:active, .navbar a:active {
 	background-color: #ddd;
 }
 .sign-in-button {
-	position: absolute;
-	top: 45%;
-	left: 45%;
+	margin-top: 60px;
 }

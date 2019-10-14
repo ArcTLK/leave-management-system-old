@@ -16,22 +16,30 @@
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="./style.css">
 		<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
-		<script src="./main.js" async defer></script>
 		<script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
+		<script src="./main.js"></script>
 	</head>
 	<body>
-		<h1>Leave Management System</h1>
-		<c:if test="${user != null}">
-			<button onclick="signOut()" class="sign-out-button">Sign out</button>
-			<div style="clear:both"></div>
-		</c:if>
+		<div class="top-bar">
+			<img src="./pcelogo.png">
+			<nav class="navbar">
+				<a href="/">Home</a>
+				<a href="/about.jsp">About</a>
+				<c:if test="${user != null}">
+					<button onclick="signOut()" class="sign-out-button">Sign out</button>
+				</c:if>
+			</nav>
+		</div>
 		<c:if test="${user == null}">
-			<div class="sign-in-button">
-				<div class="g-signin2" data-onsuccess="onSignIn"></div>
-				<div id="loginError"></div>
+			<div class="sign-in-box">
+				<h1 style="text-align:center">Sign in using MES ID</h1>
+				<div class="sign-in-button">
+					<div class="g-signin2" data-onsuccess="onSignIn"></div>
+					<div id="loginError"></div>
+				</div>
 			</div>
 		</c:if>
 		<c:if test="${user != null && user.hod == 0}">
