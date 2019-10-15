@@ -2,7 +2,7 @@ body {
 	font-family: Noto Sans;
 	margin: 0px;
 	background-color: #d6d6c2;
-	background-image: url("./bg tile.png");
+	background-image: url("https://www.abeautifulsite.net/uploads/2014/08/congruent-pentagon-outline.png");
 	color: #e8594f;
 }
 
@@ -15,7 +15,7 @@ h1 {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	background-color: #d9362bc7;
+	background-color: #d6d6c2;
 	margin-bottom: 100px;
 }
 
